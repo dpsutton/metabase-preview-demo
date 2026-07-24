@@ -1,0 +1,74 @@
+name: Revenue by Category
+entity_id: 4Qjpw5zT5mfWfeKWVplWl
+created_at: '2026-07-24T22:20:53.410515Z'
+creator_id: crowberto@metabase.com
+display: pie
+collection_id: erL2ecQSuJEJDwZhch5_a
+parameters: []
+parameter_mappings: []
+dataset_query:
+  database: Sample Database
+  stages:
+  - aggregation:
+    - - sum
+      - {}
+      - - field
+        - base-type: type/Float
+          effective-type: type/Float
+        - - Sample Database
+          - null
+          - ORDERS
+          - TOTAL
+    breakout:
+    - - field
+      - base-type: type/Text
+        effective-type: type/Text
+        join-alias: Products
+      - - Sample Database
+        - null
+        - PRODUCTS
+        - CATEGORY
+    joins:
+    - alias: Products
+      conditions:
+      - - =
+        - {}
+        - - field
+          - base-type: type/Integer
+            effective-type: type/Integer
+          - - Sample Database
+            - null
+            - ORDERS
+            - PRODUCT_ID
+        - - field
+          - base-type: type/BigInteger
+            effective-type: type/BigInteger
+            join-alias: Products
+          - - Sample Database
+            - null
+            - PRODUCTS
+            - ID
+      fields: none
+      stages:
+      - source-table:
+        - Sample Database
+        - null
+        - PRODUCTS
+        lib/type: mbql.stage/mbql
+      lib/options:
+        lib/uuid: 9c492411-4cb9-4ebf-a7b5-34845a0594f5
+      lib/type: mbql/join
+    source-table:
+    - Sample Database
+    - null
+    - ORDERS
+    lib/type: mbql.stage/mbql
+  lib/type: mbql/query
+visualization_settings:
+  column_settings: null
+card_schema: 23
+serdes/meta:
+- id: 4Qjpw5zT5mfWfeKWVplWl
+  label: revenue_by_category
+  model: Card
+type: question

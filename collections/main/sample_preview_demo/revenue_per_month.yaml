@@ -1,0 +1,44 @@
+name: Revenue per Month
+entity_id: TGQhUTHqgcZDPio4d9MAG
+created_at: '2026-07-24T22:20:53.3791Z'
+creator_id: crowberto@metabase.com
+display: area
+collection_id: erL2ecQSuJEJDwZhch5_a
+parameters: []
+parameter_mappings: []
+dataset_query:
+  database: Sample Database
+  stages:
+  - aggregation:
+    - - sum
+      - {}
+      - - field
+        - base-type: type/Float
+          effective-type: type/Float
+        - - Sample Database
+          - null
+          - ORDERS
+          - TOTAL
+    breakout:
+    - - field
+      - base-type: type/DateTime
+        effective-type: type/DateTime
+        temporal-unit: month
+      - - Sample Database
+        - null
+        - ORDERS
+        - CREATED_AT
+    source-table:
+    - Sample Database
+    - null
+    - ORDERS
+    lib/type: mbql.stage/mbql
+  lib/type: mbql/query
+visualization_settings:
+  column_settings: null
+card_schema: 23
+serdes/meta:
+- id: TGQhUTHqgcZDPio4d9MAG
+  label: revenue_per_month
+  model: Card
+type: question

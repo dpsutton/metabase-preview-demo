@@ -1,0 +1,37 @@
+name: Orders per Month
+entity_id: hbAVwdCwgxJs-bNXZIg0x
+created_at: '2026-07-24T22:20:53.273563Z'
+creator_id: crowberto@metabase.com
+display: line
+collection_id: erL2ecQSuJEJDwZhch5_a
+parameters: []
+parameter_mappings: []
+dataset_query:
+  database: Sample Database
+  stages:
+  - aggregation:
+    - - count
+      - {}
+    breakout:
+    - - field
+      - base-type: type/DateTime
+        effective-type: type/DateTime
+        temporal-unit: month
+      - - Sample Database
+        - null
+        - ORDERS
+        - CREATED_AT
+    source-table:
+    - Sample Database
+    - null
+    - ORDERS
+    lib/type: mbql.stage/mbql
+  lib/type: mbql/query
+visualization_settings:
+  column_settings: null
+card_schema: 23
+serdes/meta:
+- id: hbAVwdCwgxJs-bNXZIg0x
+  label: orders_per_month
+  model: Card
+type: question

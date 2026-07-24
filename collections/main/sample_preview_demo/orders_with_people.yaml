@@ -1,0 +1,170 @@
+name: Orders with People
+entity_id: q-n9AyMcMGdUGT5PnvXqL
+created_at: '2026-07-24T22:20:52.889581Z'
+creator_id: crowberto@metabase.com
+display: table
+collection_id: erL2ecQSuJEJDwZhch5_a
+parameters: []
+parameter_mappings: []
+dataset_query:
+  database: Sample Database
+  stages:
+  - joins:
+    - alias: People
+      conditions:
+      - - =
+        - {}
+        - - field
+          - base-type: type/Integer
+            effective-type: type/Integer
+          - - Sample Database
+            - null
+            - ORDERS
+            - USER_ID
+        - - field
+          - base-type: type/BigInteger
+            effective-type: type/BigInteger
+            join-alias: People
+          - - Sample Database
+            - null
+            - PEOPLE
+            - ID
+      fields: all
+      stages:
+      - source-table:
+        - Sample Database
+        - null
+        - PEOPLE
+        lib/type: mbql.stage/mbql
+      lib/options:
+        lib/uuid: 61c3aab5-2f4a-44b7-b542-dc92519d4754
+      lib/type: mbql/join
+    source-table:
+    - Sample Database
+    - null
+    - ORDERS
+    lib/type: mbql.stage/mbql
+  lib/type: mbql/query
+result_metadata:
+- description: This is a unique ID for the product. It is also called the “Invoice number” or “Confirmation number” in customer facing emails and screens.
+  display_name: ID
+  name: ID
+  semantic_type: type/PK
+  visibility_type: normal
+- description: The id of the user who made this order. Note that in some cases where an order was created on behalf of a customer who phoned the order in, this might be the employee who handled the request.
+  display_name: User ID
+  fk_target_field_id:
+  - Sample Database
+  - null
+  - PEOPLE
+  - ID
+  name: USER_ID
+  semantic_type: type/FK
+  visibility_type: normal
+- description: The product ID. This is an internal identifier for the product, NOT the SKU.
+  display_name: Product ID
+  fk_target_field_id:
+  - Sample Database
+  - null
+  - PRODUCTS
+  - ID
+  name: PRODUCT_ID
+  semantic_type: type/FK
+  visibility_type: normal
+- description: The raw, pre-tax cost of the order. Note that this might be different in the future from the product price due to promotions, credits, etc.
+  display_name: Subtotal
+  name: SUBTOTAL
+  visibility_type: normal
+- description: This is the amount of local and federal taxes that are collected on the purchase. Note that other governmental fees on some products are not included here, but instead are accounted for in the subtotal.
+  display_name: Tax
+  name: TAX
+  visibility_type: normal
+- description: The total billed amount.
+  display_name: Total
+  name: TOTAL
+  visibility_type: normal
+- description: Discount amount.
+  display_name: Discount
+  name: DISCOUNT
+  semantic_type: type/Discount
+  visibility_type: normal
+- description: The date and time an order was submitted.
+  display_name: Created At
+  name: CREATED_AT
+  semantic_type: type/CreationTimestamp
+  visibility_type: normal
+- description: Number of products bought.
+  display_name: Quantity
+  name: QUANTITY
+  semantic_type: type/Quantity
+  visibility_type: normal
+- description: A unique identifier given to each user.
+  display_name: People → ID
+  name: ID_2
+  semantic_type: type/PK
+  visibility_type: normal
+- description: The street address of the account’s billing address
+  display_name: People → Address
+  name: ADDRESS
+  visibility_type: normal
+- description: The contact email for the account.
+  display_name: People → Email
+  name: EMAIL
+  semantic_type: type/Email
+  visibility_type: normal
+- description: This is the salted password of the user. It should not be visible
+  display_name: People → Password
+  name: PASSWORD
+  visibility_type: normal
+- description: The name of the user who owns an account
+  display_name: People → Name
+  name: NAME
+  semantic_type: type/Name
+  visibility_type: normal
+- description: The city of the account’s billing address
+  display_name: People → City
+  name: CITY
+  semantic_type: type/City
+  visibility_type: normal
+- description: This is the longitude of the user on sign-up. It might be updated in the future to the last seen location.
+  display_name: People → Longitude
+  name: LONGITUDE
+  semantic_type: type/Longitude
+  visibility_type: normal
+- description: The state or province of the account’s billing address
+  display_name: People → State
+  name: STATE
+  semantic_type: type/State
+  visibility_type: normal
+- description: 'The channel through which we acquired this user. Valid values include: Affiliate, Facebook, Google, Organic and Twitter'
+  display_name: People → Source
+  name: SOURCE
+  semantic_type: type/Source
+  visibility_type: normal
+- description: The date of birth of the user
+  display_name: People → Birth Date
+  name: BIRTH_DATE
+  visibility_type: normal
+- description: The postal code of the account’s billing address
+  display_name: People → Zip
+  name: ZIP
+  semantic_type: type/ZipCode
+  visibility_type: normal
+- description: This is the latitude of the user on sign-up. It might be updated in the future to the last seen location.
+  display_name: People → Latitude
+  name: LATITUDE
+  semantic_type: type/Latitude
+  visibility_type: normal
+- description: The date the user record was created. Also referred to as the user’s "join date"
+  display_name: People → Created At
+  name: CREATED_AT_2
+  semantic_type: type/CreationTimestamp
+  visibility_type: normal
+visualization_settings:
+  column_settings: null
+card_schema: 23
+serdes/meta:
+- id: q-n9AyMcMGdUGT5PnvXqL
+  label: orders_with_people
+  model: Card
+type: model

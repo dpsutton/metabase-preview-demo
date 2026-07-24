@@ -1,0 +1,28 @@
+name: Total Orders
+entity_id: GoW9HV2q93ZZW2Jq7pnau
+created_at: '2026-07-24T22:20:53.880326Z'
+creator_id: crowberto@metabase.com
+display: scalar
+collection_id: erL2ecQSuJEJDwZhch5_a
+parameters: []
+parameter_mappings: []
+dataset_query:
+  database: Sample Database
+  stages:
+  - aggregation:
+    - - count
+      - {}
+    source-table:
+    - Sample Database
+    - null
+    - ORDERS
+    lib/type: mbql.stage/mbql
+  lib/type: mbql/query
+visualization_settings:
+  column_settings: null
+card_schema: 23
+serdes/meta:
+- id: GoW9HV2q93ZZW2Jq7pnau
+  label: total_orders
+  model: Card
+type: question

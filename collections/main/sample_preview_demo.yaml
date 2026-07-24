@@ -1,0 +1,8 @@
+name: Sample Preview Demo
+entity_id: erL2ecQSuJEJDwZhch5_a
+slug: sample_preview_demo
+created_at: '2026-07-24T22:20:52.768541Z'
+serdes/meta:
+- id: erL2ecQSuJEJDwZhch5_a
+  label: sample_preview_demo
+  model: Collection

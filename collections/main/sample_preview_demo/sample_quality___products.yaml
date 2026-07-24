@@ -1,0 +1,64 @@
+name: Sample Quality & Products
+entity_id: 5_Dl1FfYoHwbhYmP9SM1t
+created_at: '2026-07-24T22:20:54.012421Z'
+creator_id: crowberto@metabase.com
+collection_id: erL2ecQSuJEJDwZhch5_a
+parameters: []
+serdes/meta:
+- id: 5_Dl1FfYoHwbhYmP9SM1t
+  label: sample_quality___products
+  model: Dashboard
+dashcards:
+- entity_id: QA_2xI7y_HKqgYLZ2xAcA
+  card_id: IC2WcvxnbvhjoYVfWLrwW
+  created_at: '2026-07-24T22:20:54.017194Z'
+  row: 0
+  col: 0
+  size_x: 12
+  size_y: 8
+  inline_parameters: []
+  parameter_mappings: []
+  series: []
+  visualization_settings:
+    column_settings: null
+  serdes/meta:
+  - id: 5_Dl1FfYoHwbhYmP9SM1t
+    model: Dashboard
+  - id: QA_2xI7y_HKqgYLZ2xAcA
+    model: DashboardCard
+- entity_id: goDiZJojKyYgYuqNB7xLL
+  card_id: kSC1Zmwd8Oc5xKfDBtPHW
+  created_at: '2026-07-24T22:20:54.019034Z'
+  row: 0
+  col: 12
+  size_x: 12
+  size_y: 8
+  inline_parameters: []
+  parameter_mappings: []
+  series: []
+  visualization_settings:
+    column_settings: null
+  serdes/meta:
+  - id: 5_Dl1FfYoHwbhYmP9SM1t
+    model: Dashboard
+  - id: goDiZJojKyYgYuqNB7xLL
+    model: DashboardCard
+- entity_id: p3xFn1eufG9u33NEa4nT2
+  card_id: EQIz_yMT_bybIjImr7J2g
+  created_at: '2026-07-24T22:20:54.02088Z'
+  row: 8
+  col: 0
+  size_x: 12
+  size_y: 8
+  inline_parameters: []
+  parameter_mappings: []
+  series: []
+  visualization_settings:
+    column_settings: null
+  serdes/meta:
+  - id: 5_Dl1FfYoHwbhYmP9SM1t
+    model: Dashboard
+  - id: p3xFn1eufG9u33NEa4nT2
+    model: DashboardCard
+tabs: []
+width: fixed
