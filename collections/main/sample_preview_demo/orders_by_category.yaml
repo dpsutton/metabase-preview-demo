@@ -1,0 +1,64 @@
+name: Orders by Category
+entity_id: nB4tWc6xJm8qFs3vRk9yH
+created_at: '2026-07-25T00:00:00.000000Z'
+creator_id: crowberto@metabase.com
+display: bar
+collection_id: erL2ecQSuJEJDwZhch5_a
+parameters: []
+parameter_mappings: []
+dataset_query:
+  database: Sample Database
+  stages:
+  - aggregation:
+    - - count
+      - {}
+    breakout:
+    - - field
+      - base-type: type/Text
+        effective-type: type/Text
+        join-alias: Products
+      - - Sample Database
+        - null
+        - PRODUCTS
+        - CATEGORY
+    joins:
+    - alias: Products
+      conditions:
+      - - '='
+        - {}
+        - - field
+          - base-type: type/Integer
+            effective-type: type/Integer
+          - - Sample Database
+            - null
+            - ORDERS
+            - PRODUCT_ID
+        - - field
+          - base-type: type/BigInteger
+            effective-type: type/BigInteger
+            join-alias: Products
+          - - Sample Database
+            - null
+            - PRODUCTS
+            - ID
+      fields: none
+      stages:
+      - source-table:
+        - Sample Database
+        - null
+        - PRODUCTS
+        lib/type: mbql.stage/mbql
+    source-table:
+    - Sample Database
+    - null
+    - ORDERS
+    lib/type: mbql.stage/mbql
+  lib/type: mbql/query
+visualization_settings:
+  column_settings: null
+card_schema: 23
+serdes/meta:
+- id: nB4tWc6xJm8qFs3vRk9yH
+  label: orders_by_category
+  model: Card
+type: question
