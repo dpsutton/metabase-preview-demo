@@ -1,4 +1,4 @@
-name: Top Products by Revenue
+name: Top 5 Products by Revenue
 entity_id: kSC1Zmwd8Oc5xKfDBtPHW
 created_at: '2026-07-24T22:20:53.595804Z'
 creator_id: crowberto@metabase.com
@@ -58,7 +58,7 @@ dataset_query:
       lib/options:
         lib/uuid: e903d0c2-6fcd-451a-9c2a-69b9c7964b5f
       lib/type: mbql/join
-    limit: 10
+    limit: 5
     order-by:
     - - desc
       - {}

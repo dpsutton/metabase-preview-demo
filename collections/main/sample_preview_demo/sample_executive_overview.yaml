@@ -111,5 +111,22 @@ dashcards:
     model: Dashboard
   - id: xnR6AMtDD30OTgliQWmoy
     model: DashboardCard
+- entity_id: pT7yHm3wXk9rBv2sLq6nD
+  card_id: kQ3mVx8pLnR2tYw5uZa7b
+  created_at: '2026-07-24T23:40:00.000000Z'
+  row: 8
+  col: 12
+  size_x: 12
+  size_y: 4
+  inline_parameters: []
+  parameter_mappings: []
+  series: []
+  visualization_settings:
+    column_settings: null
+  serdes/meta:
+  - id: 7fEnlR_iRpmI-F2epSOcB
+    model: Dashboard
+  - id: pT7yHm3wXk9rBv2sLq6nD
+    model: DashboardCard
 tabs: []
 width: fixed

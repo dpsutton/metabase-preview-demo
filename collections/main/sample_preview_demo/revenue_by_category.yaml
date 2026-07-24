@@ -2,7 +2,7 @@ name: Revenue by Category
 entity_id: 4Qjpw5zT5mfWfeKWVplWl
 created_at: '2026-07-24T22:20:53.410515Z'
 creator_id: crowberto@metabase.com
-display: pie
+display: bar
 collection_id: erL2ecQSuJEJDwZhch5_a
 parameters: []
 parameter_mappings: []
